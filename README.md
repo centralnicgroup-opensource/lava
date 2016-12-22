@@ -2,6 +2,18 @@
 
 > Nothing keeps your couch warm and molten like Lava. Keep your views flowing.
 
+Lava is a "view heater" for Apache CouchDB.
+
+CouchDB views are updated on read, so if a db has been written to many times
+without any reads in between, the next read of the view may be unexpectedly
+long, while the updated index is computed. This can be avoided by reading the
+view at reasonable internals, triggering an update. This is done using the
+`stale=update_after` view parameter.
+
+If you have large couch databases with views that are infrequently accessed, it
+can take an unacceptably long time to build that view when it is queried by your
+application.
+
 Lava is a simple MIT-licensed shell script with 2 dependencies that ensures all
 DBs that are readable by a given user have the views of their corresponding
 design documents rebuilt. It takes a single parameter, a CouchDB instance url,
@@ -31,3 +43,13 @@ only user suffices -- only the ddocs are actually read.
 
 It would be nice if it could take a second optional parameter, consisting of
 regexes for paths (db or ddocs) to skip. PRs are welcome.
+
+## Thanks
+
+Lava was painstakingly created by the self-proclaimed geniuses at
+[iwantmyname], a fairly awesome domain registrar in Wellington, New Zealand. If
+you like (dare I say, love?) Lava, be sure to think of us when you're getting
+your next domain.
+
+[iwantmyname]: https://iwantmyname.com/
+
