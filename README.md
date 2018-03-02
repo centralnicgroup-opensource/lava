@@ -31,3 +31,6 @@ only user suffices -- only the ddocs are actually read.
 
 It would be nice if it could take a second optional parameter, consisting of
 regexes for paths (db or ddocs) to skip. PRs are welcome.
+
+<hr>
+&#9829;&nbsp;[iwantmyname](https://iwantmyname.com/)
